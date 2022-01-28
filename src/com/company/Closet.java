@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Closet {
 
+    /** private/public/protected без ничего = плохо **/
     private Books[] booksInCloset;
     private Clothes[] clothesInCloset;
     private Drinkables[] drinkablesInCloset;
@@ -16,6 +17,8 @@ public class Closet {
 
         clothesInCloset = new Clothes[clothesValue];
         Clothes tempClothes = new Clothes();
+        /**метод такого рода читать не очень приятно, лучше сделать не статический метод другого класса, а метод внутри этого .
+         *  Странно, что массивы не статик в данном классе **/
         Clothes.fill(clothesInCloset,tempClothes);
 
         drinkablesInCloset = new Drinkables[drinkValue];
@@ -120,6 +123,7 @@ public class Closet {
         shoesInCloset[arrIndex] = newShoes;
     }
 
+    /**метод для выведения массивов у которых объекты внутри имеют @override toString существует **/
     public void printInfoAboutShoes(){
         for (int i = 0;i<shoesInCloset.length;i++){
             System.out.println("Name: "+shoesInCloset[i].getName()+"    "+"Cost: "+shoesInCloset[i].getCost()

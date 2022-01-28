@@ -4,6 +4,8 @@ public class Food extends ElementOfCloset {
     private int experationDate;
 
 
+    /** private/public/protected без ничего = плохо **/
+    /** super(...) **/
     Food(){
         this.name = "0";
         this.cost = 0;
@@ -50,6 +52,7 @@ public class Food extends ElementOfCloset {
                 "    "+"Date: " + getExperationDate());
     }
 
+    /** тут автоподсказка говрит, что лучше было сделать**/
     public static Food[] fill(Food[] temp,Food tepmObj){
         for(int i = 0;i<temp.length;i++){
             temp[i] = tepmObj;

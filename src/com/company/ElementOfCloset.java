@@ -5,10 +5,10 @@ public class ElementOfCloset {
     protected int cost;
     protected int size;
 
-    ElementOfCloset(){this("No name",0,0);}
-    ElementOfCloset(String name){this(name,0,0);}
-    ElementOfCloset(String name, int cost){this(name,cost,0);}
-    ElementOfCloset(String name, int cost, int size){
+    public ElementOfCloset(){this("No name",0,0);}
+    public ElementOfCloset(String name){this(name,0,0);}
+    public ElementOfCloset(String name, int cost){this(name,cost,0);}
+    public ElementOfCloset(String name, int cost, int size){
         this.name = name;
         this.cost = cost;
         this.size = size;

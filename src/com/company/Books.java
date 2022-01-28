@@ -5,11 +5,13 @@ public class Books extends ElementOfCloset{
     private int valueOfPages;
 
 
+    /** private/public/protected без ничего = плохо **/
     Books(){
         typeOfBook="No type";
         valueOfPages = 0;
     }
     Books(String name){
+        /**super(name) , не зря же ты это писал ) **/
         this.name = name;
         this.cost = 0;
         this.size = 0;
@@ -17,6 +19,7 @@ public class Books extends ElementOfCloset{
         this.valueOfPages = 0;
     }
     Books(String name, int cost){
+        /**super(name, cost) , не зря же ты это писал. Много копировать лень, но ты понял куда это пихать, надеюсь  **/
         this.name = name;
         this.cost = cost;
         this.size = 0;
@@ -53,12 +56,15 @@ public class Books extends ElementOfCloset{
     public int getValueOfPages(){return valueOfPages;}
 
 
+    /** (ctrl + клик на метод и тебя переведет на него) *
+     * а почему в этому методе ты не юзаешь этот оверрайд? {@link Closet#printInfoAboutBooks()}
+     * идея хорошая, только есть готовая реализация {@link java.lang.Object#toString()} , надо только оверрайднуть (все объекты по умолчанию extends Object)**/
     @Override
     public void printInfo(){
         System.out.println("Name: "+getName()+"    "+"Cost: "+getCost()+"    "+"Size: "+getSize() +
                 "    "+"Type: " + getTypeOfBook() + "    " + "Pages: " + getValueOfPages());
     }
-
+    /** тут автоподсказка говрит, что лучше было сделать**/
     public static Books[] fill(Books[] temp,Books tepmObj){
         for(int i = 0;i<temp.length;i++){
              temp[i] = tepmObj;

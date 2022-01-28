@@ -4,6 +4,8 @@ public class Drinkables extends ElementOfCloset {
 
         private String typeOfAlcohol;
         private int capacityOfAlcohol;
+    /** private/public/protected без ничего = плохо **/
+    /** super(...) **/
         Drinkables(){
             this.name = "0";
             this.cost = 0;
@@ -60,6 +62,7 @@ public class Drinkables extends ElementOfCloset {
         }
 
 
+        /** тут автоподсказка говрит, что лучше было сделать**/
     public static Drinkables[] fill(Drinkables[] temp,Drinkables tepmObj){
         for(int i = 0;i<temp.length;i++){
             temp[i] = tepmObj;

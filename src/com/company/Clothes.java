@@ -5,13 +5,14 @@ public class Clothes extends ElementOfCloset{
 
     private int clothesOld;
 
+    /** private/public/protected без ничего = плохо **/
     Clothes(){
         name = "No name";
         cost = 0;
         size = 0;
         clothesOld = 0;
     }
-
+/** super(...) **/
     Clothes(String name){
         this.name = name;
         this.cost = 0;
@@ -45,6 +46,9 @@ public class Clothes extends ElementOfCloset{
         return clothesOld;
     }
 
+    /** (ctrl + клик на метод и тебя переведет на него) *
+     * а почему в этому методе ты не юзаешь этот оверрайд? {@link Closet#printInfoAboutBooks()}
+     * идея хорошая, только есть готовая реализация {@link java.lang.Object#toString()} , надо только оверрайднуть (все объекты по умолчанию extends Object)**/
     @Override
     public void printInfo(){
         System.out.println("Name: "+getName()+"    "+"Cost: "+getCost()+"    "+"Size: "+getSize() +
@@ -52,6 +56,7 @@ public class Clothes extends ElementOfCloset{
     }
 
 
+    /** тут автоподсказка говрит, что лучше было сделать**/
     public static Clothes[] fill(Clothes[] temp,Clothes tepmObj){
         for(int i = 0;i<temp.length;i++){
             temp[i] = tepmObj;
