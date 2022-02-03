@@ -7,43 +7,35 @@ public class Books extends ElementOfCloset{
 
     /** private/public/protected без ничего = плохо **/
     Books(){
+        super();
         typeOfBook="No type";
         valueOfPages = 0;
     }
     Books(String name){
-        /**super(name) , не зря же ты это писал ) **/
-        this.name = name;
+        super(name);
         this.cost = 0;
         this.size = 0;
         this.typeOfBook = "No type";
         this.valueOfPages = 0;
     }
     Books(String name, int cost){
-        /**super(name, cost) , не зря же ты это писал. Много копировать лень, но ты понял куда это пихать, надеюсь  **/
-        this.name = name;
-        this.cost = cost;
+        super(name,cost);
         this.size = 0;
         this.typeOfBook = "No type";
         this.valueOfPages = 0;
     }
     Books(String name, int cost,int size){
-        this.name = name;
-        this.cost = cost;
-        this.size = size;
+        super(name, cost, size);
         this.typeOfBook = "No type";
         this.valueOfPages = 0;
     }
     Books(String name, int cost,int size,String typeOfBook){
-        this.name = name;
-        this.cost = cost;
-        this.size = size;
+        super(name, cost, size);
         this.typeOfBook = typeOfBook;
         this.valueOfPages = 0;
     }
     Books(String name, int cost,int size,String typeOfBook,int valueOfPages){
-        this.name = name;
-        this.cost = cost;
-        this.size = size;
+        super(name, cost, size);
         this.typeOfBook = typeOfBook;
         this.valueOfPages = valueOfPages;
     }
@@ -64,6 +56,18 @@ public class Books extends ElementOfCloset{
         System.out.println("Name: "+getName()+"    "+"Cost: "+getCost()+"    "+"Size: "+getSize() +
                 "    "+"Type: " + getTypeOfBook() + "    " + "Pages: " + getValueOfPages());
     }
+
+    @Override
+    public String toString() {
+        return "Books{" +
+                "typeOfBook='" + typeOfBook + '\'' +
+                ", valueOfPages=" + valueOfPages +
+                ", name='" + name + '\'' +
+                ", cost=" + cost +
+                ", size=" + size +
+                '}';
+    }
+
     /** тут автоподсказка говрит, что лучше было сделать**/
     public static Books[] fill(Books[] temp,Books tepmObj){
         for(int i = 0;i<temp.length;i++){
