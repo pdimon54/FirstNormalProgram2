@@ -1,11 +1,13 @@
 package com.company;
 
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.lang.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("Parameters of closet (Book,Clothes,Drink,Food,Shoes):");
         Scanner scanner = new Scanner(System.in);
         int bookLength = scanner.nextInt();
@@ -20,7 +22,6 @@ public class Main {
             printMainMenu();
             numberSearch = scanner.nextInt();
             int choice;
-            /** лучше всего каждый кейс сделать отдельный методом . если не делать - чойс не нужно создавать заново каждый раз**/
             switch(numberSearch)
             {
                 case 1:
@@ -37,7 +38,7 @@ public class Main {
                     }
                     if (choice == 2){
                         System.out.println("==================================");
-                        closet.printInfoAboutBooks();
+                        System.out.println(Arrays.toString(closet.getBooksInCloset()));
                         System.out.println("==================================");
                     }
                     else System.out.println("You Choice is incorrect");
@@ -56,7 +57,7 @@ public class Main {
                     }
                     if (choice == 2){
                         System.out.println("==================================");
-                        closet.printInfoAboutClothes();
+                        System.out.println(Arrays.toString(closet.getClothesInCloset()));
                         System.out.println("==================================");
                     }
                     else System.out.println("You choes is incorrect");
@@ -75,7 +76,7 @@ public class Main {
                     }
                     if (choice == 2){
                         System.out.println("==================================");
-                        closet.printInfoAboutDrinks();
+                        System.out.println(Arrays.toString(closet.getDrinkablesInCloset()));
                         System.out.println("==================================");
                     }
                     else System.out.println("You choes is incorrect");
@@ -94,7 +95,7 @@ public class Main {
                     }
                     if (choice == 2){
                         System.out.println("==================================");
-                        closet.printInfoAboutFoods();
+                        System.out.println(Arrays.toString(closet.getFoodInCloset()));
                         System.out.println("==================================");
                     }
                     else System.out.println("You choes is incorrect");
@@ -113,7 +114,7 @@ public class Main {
                     }
                     if (choice == 2){
                         System.out.println("==================================");
-                        closet.printInfoAboutShoes();
+                        System.out.println(Arrays.toString(closet.getShoesInCloset()));
                         System.out.println("==================================");
                     }
                     else System.out.println("You Choice is incorrect");
@@ -122,8 +123,8 @@ public class Main {
                     closet.printInfoAboutCloset();
                     break;
                 case 7:
-                    /*FileWork of = new FileWork();
-                    of.writeAllInfoToFile(closet);*/
+                    FileWork of = new FileWork();
+                    of.writeAllInfoToFile(closet);
                     break;
                 case 8:
                     System.exit(0);
@@ -146,7 +147,7 @@ public class Main {
         System.out.println("4- Food");
         System.out.println("5- Shoes");
         System.out.println("6- Show all info about your closet");
-        //System.out.println("7- Write info to the file");
+        System.out.println("7- Write info to the file");
         System.out.println("8- exit");
         System.out.println(" ");
         System.out.println(" ");

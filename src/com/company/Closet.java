@@ -1,4 +1,5 @@
 package com.company;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Closet {
@@ -13,25 +14,25 @@ public class Closet {
     Closet(int booksValue,int clothesValue,int drinkValue,int foodValue,int shoesValue){
         booksInCloset = new Books[booksValue];
         Books tempBook = new Books();
-        Books.fill(booksInCloset,tempBook);
+        Arrays.fill(booksInCloset,tempBook);
 
         clothesInCloset = new Clothes[clothesValue];
         Clothes tempClothes = new Clothes();
         /**метод такого рода читать не очень приятно, лучше сделать не статический метод другого класса, а метод внутри этого .
          *  Странно, что массивы не статик в данном классе **/
-        Clothes.fill(clothesInCloset,tempClothes);
+        Arrays.fill(clothesInCloset,tempClothes);
 
         drinkablesInCloset = new Drinkables[drinkValue];
         Drinkables tempDrink = new Drinkables();
-        Drinkables.fill(drinkablesInCloset,tempDrink);
+        Arrays.fill(drinkablesInCloset,tempDrink);
 
         foodInCloset = new Food[foodValue];
         Food tempFood = new Food();
-        Food.fill(foodInCloset,tempFood);
+        Arrays.fill(foodInCloset,tempFood);
 
         shoesInCloset = new Shoes[shoesValue];
         Shoes tempShoes = new Shoes();
-        Shoes.fill(shoesInCloset,tempShoes);
+        Arrays.fill(shoesInCloset,tempShoes);
 
     }
 
@@ -124,58 +125,43 @@ public class Closet {
     }
 
     /**метод для выведения массивов у которых объекты внутри имеют @override toString существует **/
-    public void printInfoAboutShoes(){
-        for (int i = 0;i<shoesInCloset.length;i++){
-            System.out.println("Name: "+shoesInCloset[i].getName()+"    "+"Cost: "+shoesInCloset[i].getCost()
-                    +"    "+"Size: "+shoesInCloset[i].getSize() +
-                    "    "+"Type: " + shoesInCloset[i].getTypeOfShoes());
+    /*public void printInfoAboutShoes(){
+        for (Shoes shoes : shoesInCloset) {
+            shoes.toString();
         }
     }
 
     public void printInfoAboutBooks(){
-        for (int i = 0;i<booksInCloset.length;i++){
-            System.out.println("Name: "+booksInCloset[i].getName()+"    "+"Cost: "+booksInCloset[i].getCost()
-                    +"    "+"Size: "+booksInCloset[i].getSize() +
-                    "    "+"Type: " + booksInCloset[i].getTypeOfBook());
+        for (Books books : booksInCloset) {
+            books.toString();
         }
     }
 
     public void printInfoAboutClothes(){
-        for (int i = 0;i<clothesInCloset.length;i++){
-            System.out.println("Name: "+clothesInCloset[i].getName()+"    "+"Cost: "+clothesInCloset[i].getCost()
-                    +"    "+"Size: "+clothesInCloset[i].getSize() +
-                    "    "+"Old: " + clothesInCloset[i].getClothesOld());
+        for (Clothes clothes : clothesInCloset) {
+            clothes.toString();
         }
     }
 
     public void printInfoAboutDrinks(){
-        for (int i = 0;i<drinkablesInCloset.length;i++){
-            System.out.println("Name: "+drinkablesInCloset[i].getName()+"    "+"Cost: "+drinkablesInCloset[i].getCost()
-                    +"    "+"Size: "+drinkablesInCloset[i].getSize() +
-                    "    "+"Type: " + drinkablesInCloset[i].getTypeOfAlcohol() +
-                    "    "+"Capacity: " + drinkablesInCloset[i].getCapacityOfAlcohol());
+        for (Drinkables drinkables : drinkablesInCloset) {
+            drinkables.toString();
         }
     }
     public void printInfoAboutFoods(){
-        for (int i = 0;i<foodInCloset.length;i++){
-            System.out.println("Name: "+foodInCloset[i].getName()+"    "+"Cost: "+foodInCloset[i].getCost()
-                    +"    "+"Size: "+foodInCloset[i].getSize() +
-                    "    "+"Date: " + foodInCloset[i].getExperationDate());
+        for (Food food : foodInCloset) {
+            food.toString();
         }
-    }
+    }*/
 
     public void printInfoAboutCloset(){
         System.out.println("=====================================================");
-        System.out.println("Books:");
-        printInfoAboutBooks();
-        System.out.println("Clothes:");
-        printInfoAboutClothes();
-        System.out.println("Drinks:");
-        printInfoAboutDrinks();
-        System.out.println("Foods:");
-        printInfoAboutFoods();
-        System.out.println("Shoes:");
-        printInfoAboutShoes();
+        System.out.println("Books:" + Arrays.toString(booksInCloset));
+        System.out.println("Clothes: " + Arrays.toString(clothesInCloset));
+        System.out.println("Drinks:" + Arrays.toString(drinkablesInCloset));
+        System.out.println("Foods:" + Arrays.toString(foodInCloset));
+        System.out.println("Shoes:" + Arrays.toString(shoesInCloset));
         System.out.println("=====================================================");
     }
+
 }

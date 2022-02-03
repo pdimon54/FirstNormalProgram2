@@ -1,50 +1,39 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Drinkables extends ElementOfCloset {
 
         private String typeOfAlcohol;
         private int capacityOfAlcohol;
     /** private/public/protected без ничего = плохо **/
-    /** super(...) **/
         Drinkables(){
-            this.name = "0";
-            this.cost = 0;
-            this.size = 0;
+            super();
             this.typeOfAlcohol = "No type";
             this.capacityOfAlcohol = 0;
         }
         Drinkables(String name){
-            this.name = name;
-            this.cost = 0;
-            this.size = 0;
+            super(name);
             this.typeOfAlcohol = "No type";
             this.capacityOfAlcohol = 0;
         }
         Drinkables(String name, int cost){
-            this.name = name;
-            this.cost = cost;
-            this.size = 0;
+            super(name, cost);
             this.typeOfAlcohol = "No type";
             this.capacityOfAlcohol = 0;
         }
         Drinkables(String name, int cost, int size){
-            this.name = name;
-            this.cost = cost;
-            this.size = size;
+            super(name, cost, size);
             this.typeOfAlcohol = "No type";
             this.capacityOfAlcohol = 0;
         }
         Drinkables(String name, int cost, int size,String typeOfAlcohol){
-            this.name = name;
-            this.cost = cost;
-            this.size = size;
+            super(name, cost, size);
             this.typeOfAlcohol = typeOfAlcohol;
             this.capacityOfAlcohol = 0;
         }
         Drinkables(String name, int cost, int size,String typeOfAlcohol, int capacityOfAlcohol){
-            this.name = name;
-            this.cost = cost;
-            this.size = size;
+            super(name, cost, size);
             this.typeOfAlcohol = typeOfAlcohol;
             this.capacityOfAlcohol = capacityOfAlcohol;
         }
@@ -61,12 +50,16 @@ public class Drinkables extends ElementOfCloset {
                     "    "+"Type: " + getTypeOfAlcohol() + "    " + "Capacity: " + getCapacityOfAlcohol());
         }
 
+    /*public static void fill(Drinkables[] temp, Drinkables tepmObj){
+        Arrays.fill(temp, tepmObj);
+    }*/
 
-        /** тут автоподсказка говрит, что лучше было сделать**/
-    public static Drinkables[] fill(Drinkables[] temp,Drinkables tepmObj){
-        for(int i = 0;i<temp.length;i++){
-            temp[i] = tepmObj;
-        }
-        return temp;
+    public String toString() {
+        return "Drinks{" +
+                "typeOfAlcohol='" + typeOfAlcohol + '\'' +
+                ", name='" + name + '\'' +
+                ", cost=" + cost +
+                ", size=" + size +
+                '}';
     }
 }

@@ -1,39 +1,31 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Shoes extends ElementOfCloset{
     private String typeOfShoes;
 
     public Shoes(){
-        name = "No name";
-        cost = 0;
-        size = 0;
+        super();
         typeOfShoes = "0";
     }
 
     /** private/public/protected без ничего = плохо **/
-    /** super(...) **/
+
     public Shoes(String name){
-        this.name = name;
-        this.cost = 0;
-        this.size = 0;
+        super(name);
         typeOfShoes = "0";
     }
     public Shoes(String name, int cost){
-        this.name = name;
-        this.cost = cost;
-        this.size = 0;
+        super(name, cost);
         typeOfShoes = "0";
     }
     public Shoes(String name, int cost, int size){
-        this.name = name;
-        this.cost = cost;
-        this.size = size;
+        super(name, cost, size);
         typeOfShoes = "0";
     }
     public Shoes(String name, int cost, int size, String typeOfShoes){
-        this.name = name;
-        this.cost = cost;
-        this.size = size;
+        super(name, cost, size);
         this.typeOfShoes = typeOfShoes;
     }
 
@@ -55,12 +47,17 @@ public class Shoes extends ElementOfCloset{
                 "    "+"Type: " + getTypeOfShoes());
     }
 
-    /** тут автоподсказка говрит, что лучше было сделать**/
-    public static Shoes[] fill(Shoes[] temp,Shoes tepmObj){
-        for(int i = 0;i<temp.length;i++){
-            temp[i] = tepmObj;
-        }
-        return temp;
+    /*public static void fill(Shoes[] temp, Shoes tepmObj){
+        Arrays.fill(temp, tepmObj);
+    }*/
+
+    public String toString() {
+        return "Shoes{" +
+                "typeOfShoes='" + typeOfShoes + '\'' +
+                ", name='" + name + '\'' +
+                ", cost=" + cost +
+                ", size=" + size +
+                '}';
     }
 
 }

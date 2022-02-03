@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Books extends ElementOfCloset{
     private String typeOfBook;
     private int valueOfPages;
@@ -13,14 +15,11 @@ public class Books extends ElementOfCloset{
     }
     Books(String name){
         super(name);
-        this.cost = 0;
-        this.size = 0;
         this.typeOfBook = "No type";
         this.valueOfPages = 0;
     }
     Books(String name, int cost){
         super(name,cost);
-        this.size = 0;
         this.typeOfBook = "No type";
         this.valueOfPages = 0;
     }
@@ -49,7 +48,7 @@ public class Books extends ElementOfCloset{
 
 
     /** (ctrl + клик на метод и тебя переведет на него) *
-     * а почему в этому методе ты не юзаешь этот оверрайд? {@link Closet#printInfoAboutBooks()}
+     * а почему в этому методе ты не юзаешь этот оверрайд?
      * идея хорошая, только есть готовая реализация {@link java.lang.Object#toString()} , надо только оверрайднуть (все объекты по умолчанию extends Object)**/
     @Override
     public void printInfo(){
@@ -68,11 +67,7 @@ public class Books extends ElementOfCloset{
                 '}';
     }
 
-    /** тут автоподсказка говрит, что лучше было сделать**/
-    public static Books[] fill(Books[] temp,Books tepmObj){
-        for(int i = 0;i<temp.length;i++){
-             temp[i] = tepmObj;
-        }
-        return temp;
-    }
+    /*public static void fill(Books[] temp, Books tepmObj){
+        Arrays.fill(temp, tepmObj);
+    }*/
 }

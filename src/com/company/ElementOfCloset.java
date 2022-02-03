@@ -25,6 +25,13 @@ public class ElementOfCloset {
     public void printInfo(){
         System.out.println("Name: "+getName()+"    "+"Cost: "+getCost()+"    "+"Size: "+getSize());
     }
+    public String toString() {
+        return "Element{" +
+                ", name='" + name + '\'' +
+                ", cost=" + cost +
+                ", size=" + size +
+                '}';
+    }
 
 
 }

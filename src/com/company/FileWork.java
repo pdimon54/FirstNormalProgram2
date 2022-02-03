@@ -1,23 +1,31 @@
 package com.company;
 import java.io.*;
+import java.util.Arrays;
 
 public class FileWork {
-    public void writeAllInfoToFile(Closet closet){
-        try {
+    public void writeAllInfoToFile(Closet closet) throws IOException {
 
+        File file = new File("Data.txt");
+        file.createNewFile();
 
-            FileOutputStream outStream = new FileOutputStream("C://Users//Dmytro//OneDrive//Рабочий стол//JavaProg//src//com//company//Info.txt");
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(outStream);
+        FileWriter writer = new FileWriter(file);
+        writer.write("Books: " + Arrays.toString(closet.getBooksInCloset()) + "\n");
+        writer.write("Clothes: " + Arrays.toString(closet.getClothesInCloset()) + "\n");
+        writer.write("Drinks: " + Arrays.toString(closet.getDrinkablesInCloset()) + "\n");
+        writer.write("Foods: " + Arrays.toString(closet.getFoodInCloset()) + "\n");
+        writer.write("Shoes: " + Arrays.toString(closet.getShoesInCloset()) + "\n");
+        writer.flush();
+        writer.close();
 
-            objectOutputStream.writeObject(closet);
-            outStream.close();
-            System.out.println("successful");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        // Создание объекта FileReader
+        /*FileReader fr = new FileReader(file);
+        char [] a = new char[200];   // Количество символов, которое будем считывать
+        fr.read(a);   // Чтение содержимого в массив
 
+        for(char c : a)
+            System.out.print(c);   // Вывод символов один за другими
+        fr.close();
+    }*/
     }
 
 

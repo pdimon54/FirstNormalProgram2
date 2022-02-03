@@ -1,40 +1,31 @@
 package com.company;
 
 
+import java.util.Arrays;
+
 public class Clothes extends ElementOfCloset{
 
     private int clothesOld;
 
     /** private/public/protected без ничего = плохо **/
     Clothes(){
-        name = "No name";
-        cost = 0;
-        size = 0;
+        super();
         clothesOld = 0;
     }
-/** super(...) **/
     Clothes(String name){
-        this.name = name;
-        this.cost = 0;
-        this.size = 0;
+        super(name);
         this.clothesOld = 0;
     }
     Clothes(String name, int cost){
-        this.name = name;
-        this.cost = cost;
-        this.size = 0;
+        super(name,cost);
         this.clothesOld = 0;
     }
     Clothes(String name, int cost, int size){
-        this.name = name;
-        this.cost = cost;
-        this.size = size;
+        super(name, cost, size);
         this.clothesOld = 0;
     }
     Clothes(String name, int cost, int size, int clothesOld){
-        this.name = name;
-        this.cost = cost;
-        this.size = size;
+        super(name, cost, size);
         this.clothesOld = clothesOld;
     }
 
@@ -47,7 +38,7 @@ public class Clothes extends ElementOfCloset{
     }
 
     /** (ctrl + клик на метод и тебя переведет на него) *
-     * а почему в этому методе ты не юзаешь этот оверрайд? {@link Closet#printInfoAboutBooks()}
+     * а почему в этому методе ты не юзаешь этот оверрайд?
      * идея хорошая, только есть готовая реализация {@link java.lang.Object#toString()} , надо только оверрайднуть (все объекты по умолчанию extends Object)**/
     @Override
     public void printInfo(){
@@ -55,13 +46,16 @@ public class Clothes extends ElementOfCloset{
                 "    "+"Clothes old: "+getClothesOld());
     }
 
+    /*public static void fill(Clothes[] temp, Clothes tepmObj){
+        Arrays.fill(temp, tepmObj);
+    }*/
 
-    /** тут автоподсказка говрит, что лучше было сделать**/
-    public static Clothes[] fill(Clothes[] temp,Clothes tepmObj){
-        for(int i = 0;i<temp.length;i++){
-            temp[i] = tepmObj;
-        }
-        return temp;
+    public String toString() {
+        return "Clothes{" +
+                ", clothesOld=" + clothesOld +
+                ", name='" + name + '\'' +
+                ", cost=" + cost +
+                ", size=" + size +
+                '}';
     }
-
 }
