@@ -8,7 +8,7 @@ public class Books extends ElementOfCloset{
 
 
     /** private/public/protected без ничего = плохо **/
-    Books(){
+    public Books(){
         super();
         typeOfBook="No type";
         valueOfPages = 0;

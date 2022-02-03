@@ -18,8 +18,6 @@ public class Closet {
 
         clothesInCloset = new Clothes[clothesValue];
         Clothes tempClothes = new Clothes();
-        /**метод такого рода читать не очень приятно, лучше сделать не статический метод другого класса, а метод внутри этого .
-         *  Странно, что массивы не статик в данном классе **/
         Arrays.fill(clothesInCloset,tempClothes);
 
         drinkablesInCloset = new Drinkables[drinkValue];
