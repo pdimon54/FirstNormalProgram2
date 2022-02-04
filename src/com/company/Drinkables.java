@@ -1,38 +1,39 @@
 package com.company;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 public class Drinkables extends ElementOfCloset {
 
         private String typeOfAlcohol;
         private int capacityOfAlcohol;
-    /** private/public/protected без ничего = плохо **/
-        Drinkables(){
+
+    public Drinkables(){
             super();
             this.typeOfAlcohol = "No type";
             this.capacityOfAlcohol = 0;
         }
-        Drinkables(String name){
+    public Drinkables(String name){
             super(name);
             this.typeOfAlcohol = "No type";
             this.capacityOfAlcohol = 0;
         }
-        Drinkables(String name, int cost){
+    public Drinkables(String name, int cost){
             super(name, cost);
             this.typeOfAlcohol = "No type";
             this.capacityOfAlcohol = 0;
         }
-        Drinkables(String name, int cost, int size){
+    public Drinkables(String name, int cost, int size){
             super(name, cost, size);
             this.typeOfAlcohol = "No type";
             this.capacityOfAlcohol = 0;
         }
-        Drinkables(String name, int cost, int size,String typeOfAlcohol){
+    public Drinkables(String name, int cost, int size,String typeOfAlcohol){
             super(name, cost, size);
             this.typeOfAlcohol = typeOfAlcohol;
             this.capacityOfAlcohol = 0;
         }
-        Drinkables(String name, int cost, int size,String typeOfAlcohol, int capacityOfAlcohol){
+    public Drinkables(String name, int cost, int size,String typeOfAlcohol, int capacityOfAlcohol){
             super(name, cost, size);
             this.typeOfAlcohol = typeOfAlcohol;
             this.capacityOfAlcohol = capacityOfAlcohol;

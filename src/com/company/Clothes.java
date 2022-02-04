@@ -1,30 +1,30 @@
 package com.company;
 
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class Clothes extends ElementOfCloset{
+public class Clothes extends ElementOfCloset  {
 
     private int clothesOld;
 
-    /** private/public/protected без ничего = плохо **/
-    Clothes(){
+    public Clothes(){
         super();
         clothesOld = 0;
     }
-    Clothes(String name){
+    public Clothes(String name){
         super(name);
         this.clothesOld = 0;
     }
-    Clothes(String name, int cost){
+    public Clothes(String name, int cost){
         super(name,cost);
         this.clothesOld = 0;
     }
-    Clothes(String name, int cost, int size){
+    public Clothes(String name, int cost, int size){
         super(name, cost, size);
         this.clothesOld = 0;
     }
-    Clothes(String name, int cost, int size, int clothesOld){
+    public Clothes(String name, int cost, int size, int clothesOld){
         super(name, cost, size);
         this.clothesOld = clothesOld;
     }
@@ -37,9 +37,7 @@ public class Clothes extends ElementOfCloset{
         return clothesOld;
     }
 
-    /** (ctrl + клик на метод и тебя переведет на него) *
-     * а почему в этому методе ты не юзаешь этот оверрайд?
-     * идея хорошая, только есть готовая реализация {@link java.lang.Object#toString()} , надо только оверрайднуть (все объекты по умолчанию extends Object)**/
+
     @Override
     public void printInfo(){
         System.out.println("Name: "+getName()+"    "+"Cost: "+getCost()+"    "+"Size: "+getSize() +

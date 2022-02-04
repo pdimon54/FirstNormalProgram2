@@ -17,16 +17,37 @@ public class FileWork {
         writer.flush();
         writer.close();
 
-        // Создание объекта FileReader
-        /*FileReader fr = new FileReader(file);
-        char [] a = new char[200];   // Количество символов, которое будем считывать
-        fr.read(a);   // Чтение содержимого в массив
+    }
 
-        for(char c : a)
-            System.out.print(c);   // Вывод символов один за другими
-        fr.close();
-    }*/
+    public boolean saveData(Closet closet) throws IOException {
+        boolean bool = false;
+
+        File file = new File("Data.data");
+        ObjectOutputStream oos = null;
+        FileOutputStream fos = new FileOutputStream(file);
+        if(fos != null ){
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(closet);
+            bool = true;
+        }
+        if(oos != null){
+            oos.close();
+        }
+
+        return bool;
     }
 
 
+    public Closet downloadData() throws IOException, ClassNotFoundException {
+        File file = new File("Data.data");
+        ObjectInputStream ois = null;
+        FileInputStream fis = new FileInputStream(file);
+        if(fis!=null){
+            ois = new ObjectInputStream(fis);
+            Closet closet = (Closet) ois.readObject();
+            return closet;
+        }
+        ois.close();
+        throw new InvalidObjectException("Object failed");
+    }
 }

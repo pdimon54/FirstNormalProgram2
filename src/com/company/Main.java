@@ -7,7 +7,7 @@ import java.lang.*;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         System.out.println("Parameters of closet (Book,Clothes,Drink,Food,Shoes):");
         Scanner scanner = new Scanner(System.in);
         int bookLength = scanner.nextInt();
@@ -127,15 +127,22 @@ public class Main {
                     of.writeAllInfoToFile(closet);
                     break;
                 case 8:
+                    FileWork save = new FileWork();
+                    save.saveData(closet);
+                    break;
+                case 9:
+                    FileWork download = new FileWork();
+                    closet = download.downloadData();
+                    break;
+                case 10:
                     System.exit(0);
                     break;
-
                 default:
-                    System.out.println("Please , enter an int from 0 to 8");
+                    System.out.println("Please , enter an int from 0 to 10");
                     break;
 
             }
-        } while(numberSearch!=8);
+        } while(numberSearch!=10);
     }
 
     private static void printMainMenu() {
@@ -147,8 +154,10 @@ public class Main {
         System.out.println("4- Food");
         System.out.println("5- Shoes");
         System.out.println("6- Show all info about your closet");
-        System.out.println("7- Write info to the file");
-        System.out.println("8- exit");
+        System.out.println("7- Write info to the .txt file");
+        System.out.println("8- Save info about this closet");
+        System.out.println("9- Download info about last closet");
+        System.out.println("10- exit");
         System.out.println(" ");
         System.out.println(" ");
     }

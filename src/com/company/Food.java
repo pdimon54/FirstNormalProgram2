@@ -1,29 +1,28 @@
 package com.company;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 public class Food extends ElementOfCloset {
     private int experationDate;
 
-
-    /** private/public/protected без ничего = плохо **/
-    Food(){
+    public Food(){
         super();
         this.experationDate = 0;
     }
-    Food(String name){
+    public Food(String name){
         super(name);
         this.experationDate = 0;
     }
-    Food(String name, int cost){
+    public Food(String name, int cost){
         super(name, cost);
         this.experationDate = 0;
     }
-    Food(String name, int cost, int size){
+    public Food(String name, int cost, int size){
         super(name, cost, size);
         this.experationDate = 0;
     }
-    Food(String name, int cost, int size,int experationDate){
+    public Food(String name, int cost, int size,int experationDate){
         super(name, cost, size);
         this.experationDate = experationDate;
     }

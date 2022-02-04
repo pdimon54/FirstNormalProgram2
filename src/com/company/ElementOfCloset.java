@@ -1,6 +1,8 @@
 package com.company;
 
-public class ElementOfCloset {
+import java.io.Serializable;
+
+public class ElementOfCloset implements Serializable {
     protected String name;
     protected int cost;
     protected int size;

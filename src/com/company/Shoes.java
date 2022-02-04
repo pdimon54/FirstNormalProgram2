@@ -1,8 +1,9 @@
 package com.company;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class Shoes extends ElementOfCloset{
+public class Shoes extends ElementOfCloset {
     private String typeOfShoes;
 
     public Shoes(){
@@ -10,7 +11,6 @@ public class Shoes extends ElementOfCloset{
         typeOfShoes = "0";
     }
 
-    /** private/public/protected без ничего = плохо **/
 
     public Shoes(String name){
         super(name);
@@ -39,9 +39,6 @@ public class Shoes extends ElementOfCloset{
     }
 
     @Override
-    /** (ctrl + клик на метод и тебя переведет на него) *
-     * а почему в этому методе ты не юзаешь этот оверрайд? {@link Closet#printInfoAboutBooks()}
-     * идея хорошая, только есть готовая реализация {@link java.lang.Object#toString()} , надо только оверрайднуть (все объекты по умолчанию extends Object)**/
     public void printInfo(){
         System.out.println("Name: "+getName()+"    "+"Cost: "+getCost()+"    "+"Size: "+getSize() +
                 "    "+"Type: " + getTypeOfShoes());
