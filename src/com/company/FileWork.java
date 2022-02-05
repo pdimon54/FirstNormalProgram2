@@ -25,12 +25,10 @@ public class FileWork {
         File file = new File("Data.data");
         ObjectOutputStream oos = null;
         FileOutputStream fos = new FileOutputStream(file);
-        /** как оно может быть null? **/
-        if(fos != null ){
-            oos = new ObjectOutputStream(fos);
-            oos.writeObject(closet);
-            bool = true;
-        }
+        oos = new ObjectOutputStream(fos);
+        oos.writeObject(closet);
+        bool = true;
+
         if(oos != null){
             oos.close();
         }
@@ -46,10 +44,10 @@ public class FileWork {
         if(fis!=null){
             ois = new ObjectInputStream(fis);
             Closet closet = (Closet) ois.readObject();
+            ois.close();
             return closet;
         }
         ois.close();
-        /** зачем всегда кидать ошибку? . и, если кидаешь - лови ее (catch) хоть где-то **/
         throw new InvalidObjectException("Object failed");
     }
 }

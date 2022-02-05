@@ -21,104 +21,22 @@ public class Main {
         {
             printMainMenu();
             numberSearch = scanner.nextInt();
-            int choice;
             switch(numberSearch)
             {
                 case 1:
-                    System.out.println("Choice: 1 - add element    2 - show all books");
-                    choice = scanner.nextInt();
-                    if(choice == 1){
-                        System.out.println("Input index:");
-                        int arrIndex = scanner.nextInt();
-                        if(arrIndex>=bookLength){
-                            System.out.println("You write incorrect index");
-                            break;
-                        }
-                        closet.addBook(arrIndex);
-                    }
-                    if (choice == 2){
-                        System.out.println("==================================");
-                        System.out.println(Arrays.toString(closet.getBooksInCloset()));
-                        System.out.println("==================================");
-                    }
-                    else System.out.println("You Choice is incorrect");
+                    caseBooks(closet,bookLength);
                     break;
                 case 2:
-                    System.out.println("Choice: 1 - add element    2 - show all clothes");
-                    choice = scanner.nextInt();
-                    if(choice == 1){
-                        System.out.println("Input index:");
-                        int arrIndex = scanner.nextInt();
-                        if(arrIndex>=clothesLength){
-                            System.out.println("You write incorrect index");
-                            break;
-                        }
-                        closet.addClothes(arrIndex);
-                    }
-                    if (choice == 2){
-                        System.out.println("==================================");
-                        System.out.println(Arrays.toString(closet.getClothesInCloset()));
-                        System.out.println("==================================");
-                    }
-                    else System.out.println("You choes is incorrect");
+                    caseClothes(closet,clothesLength);
                     break;
                 case 3:
-                    /**вынеси в отдельный метод каждый их кейсов (хотя бы те, что больше чем в 5 строчек), очень уж много строчек и не оч приятно так читать , а выносить в отдельный - правило чистого кода **/
-                    System.out.println("Choice: 1 - add element    2 - show all drinks");
-                    choice = scanner.nextInt();
-                    if(choice == 1){
-                        System.out.println("Input index:");
-                        int arrIndex = scanner.nextInt();
-                        if(arrIndex>=drinkLength){
-                            System.out.println("You write incorrect index");
-                            break;
-                        }
-                        closet.addDrink(arrIndex);
-                    }
-                    if (choice == 2){
-                        System.out.println("==================================");
-                        System.out.println(Arrays.toString(closet.getDrinkablesInCloset()));
-                        System.out.println("==================================");
-                    }
-                    else System.out.println("You choes is incorrect");
+                    caseDrinks(closet,drinkLength);
                     break;
                 case 4:
-                    System.out.println("Choice: 1 - add element    2 - show all foods");
-                    choice = scanner.nextInt();
-                    if(choice == 1){
-                        System.out.println("Input index:");
-                        int arrIndex = scanner.nextInt();
-                        if(arrIndex>=foodLength){
-                            System.out.println("You write incorrect index");
-                            break;
-                        }
-                        closet.addFood(arrIndex);
-                    }
-                    if (choice == 2){
-                        System.out.println("==================================");
-                        System.out.println(Arrays.toString(closet.getFoodInCloset()));
-                        System.out.println("==================================");
-                    }
-                    else System.out.println("You choes is incorrect");
+                    caseFoods(closet,foodLength);
                     break;
                 case 5:
-                    System.out.println("Choice: 1 - add element    2 - show all shoes");
-                    choice = scanner.nextInt();
-                    if(choice == 1){
-                        System.out.println("Input index:");
-                        int arrIndex = scanner.nextInt();
-                        if(arrIndex>=shoesLength){
-                            System.out.println("You write incorrect index");
-                            break;
-                        }
-                        closet.addShoes(arrIndex);
-                    }
-                    if (choice == 2){
-                        System.out.println("==================================");
-                        System.out.println(Arrays.toString(closet.getShoesInCloset()));
-                        System.out.println("==================================");
-                    }
-                    else System.out.println("You Choice is incorrect");
+                    caseShoes(closet,shoesLength);
                     break;
                 case 6:
                     closet.printInfoAboutCloset();
@@ -162,4 +80,108 @@ public class Main {
         System.out.println(" ");
         System.out.println(" ");
     }
+
+    private static void caseBooks(Closet closet, int bookLength){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choice: 1 - add element    2 - show all books");
+        int choice = scanner.nextInt();
+        if(choice == 1){
+            System.out.println("Input index:");
+            int arrIndex = scanner.nextInt();
+            if(arrIndex>=bookLength){
+                System.out.println("You write incorrect index");
+                return;
+            }
+            closet.addBook(arrIndex);
+        }
+        if (choice == 2){
+            System.out.println("==================================");
+            System.out.println(Arrays.toString(closet.getBooksInCloset()));
+            System.out.println("==================================");
+        }
+        else System.out.println("You Choice is incorrect");
+    }
+
+    private static void caseClothes(Closet closet, int clothesLength){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choice: 1 - add element    2 - show all clothes");
+        int choice = scanner.nextInt();
+        if(choice == 1){
+            System.out.println("Input index:");
+            int arrIndex = scanner.nextInt();
+            if(arrIndex>=clothesLength){
+                System.out.println("You write incorrect index");
+                return;
+            }
+            closet.addClothes(arrIndex);
+        }
+        if (choice == 2){
+            System.out.println("==================================");
+            System.out.println(Arrays.toString(closet.getClothesInCloset()));
+            System.out.println("==================================");
+        }
+        else System.out.println("You choice is incorrect");
+    }
+    private static void caseDrinks(Closet closet, int drinkLength){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choice: 1 - add element    2 - show all drinks");
+        int choice = scanner.nextInt();
+        if(choice == 1){
+            System.out.println("Input index:");
+            int arrIndex = scanner.nextInt();
+            if(arrIndex>=drinkLength){
+                System.out.println("You write incorrect index");
+                return;
+            }
+            closet.addDrink(arrIndex);
+        }
+        if (choice == 2){
+            System.out.println("==================================");
+            System.out.println(Arrays.toString(closet.getDrinkablesInCloset()));
+            System.out.println("==================================");
+        }
+        else System.out.println("You choice is incorrect");
+    }
+
+    private static void caseFoods(Closet closet, int foodLength){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choice: 1 - add element    2 - show all foods");
+        int choice = scanner.nextInt();
+        if(choice == 1){
+            System.out.println("Input index:");
+            int arrIndex = scanner.nextInt();
+            if(arrIndex>=foodLength){
+                System.out.println("You write incorrect index");
+                return;
+            }
+            closet.addFood(arrIndex);
+        }
+        if (choice == 2){
+            System.out.println("==================================");
+            System.out.println(Arrays.toString(closet.getFoodInCloset()));
+            System.out.println("==================================");
+        }
+        else System.out.println("You choice is incorrect");
+    }
+    private static void caseShoes(Closet closet, int shoesLength){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choice: 1 - add element    2 - show all shoes");
+        int choice = scanner.nextInt();
+        if(choice == 1){
+            System.out.println("Input index:");
+            int arrIndex = scanner.nextInt();
+            if(arrIndex>=shoesLength){
+                System.out.println("You write incorrect index");
+                return;
+            }
+            closet.addShoes(arrIndex);
+        }
+        if (choice == 2){
+            System.out.println("==================================");
+            System.out.println(Arrays.toString(closet.getShoesInCloset()));
+            System.out.println("==================================");
+        }
+        else System.out.println("You choice is incorrect");
+    }
+
 }
