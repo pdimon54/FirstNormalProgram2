@@ -25,6 +25,7 @@ public class FileWork {
         File file = new File("Data.data");
         ObjectOutputStream oos = null;
         FileOutputStream fos = new FileOutputStream(file);
+        /** как оно может быть null? **/
         if(fos != null ){
             oos = new ObjectOutputStream(fos);
             oos.writeObject(closet);
@@ -48,6 +49,7 @@ public class FileWork {
             return closet;
         }
         ois.close();
+        /** зачем всегда кидать ошибку? . и, если кидаешь - лови ее (catch) хоть где-то **/
         throw new InvalidObjectException("Object failed");
     }
 }

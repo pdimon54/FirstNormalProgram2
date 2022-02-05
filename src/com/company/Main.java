@@ -63,6 +63,7 @@ public class Main {
                     else System.out.println("You choes is incorrect");
                     break;
                 case 3:
+                    /**вынеси в отдельный метод каждый их кейсов (хотя бы те, что больше чем в 5 строчек), очень уж много строчек и не оч приятно так читать , а выносить в отдельный - правило чистого кода **/
                     System.out.println("Choice: 1 - add element    2 - show all drinks");
                     choice = scanner.nextInt();
                     if(choice == 1){
